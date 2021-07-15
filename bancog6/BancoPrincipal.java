@@ -1,6 +1,7 @@
 package bancog6;
 
 import java.util.Random;
+
 import java.util.Scanner;
 
 import entidades.ContaCorrente;
@@ -81,10 +82,11 @@ public class BancoPrincipal {
 				}
 			}
 			if(op == '2') {
+				int i;
 	                System.out.println("Conta Corrente");
 
-	                 for (int i=0; i<10;i++) {
-	                    String menuCorrente[] = {"Débito", "Crédito", "Saldo","Cheques", "Voltar ao Menu", "Sair"};
+	                 for (i=0; i<10;i++) {
+	                    String menuCorrente[] = {"Débito", "Crédito", "Saldo","Cheques", "Voltar ao Menu"};
 
 	                    for(int x = 0; x<menuCorrente.length; x++) {
 	                        System.out.print((x+1) + " - " + menuCorrente[x] + "\n");
@@ -95,34 +97,29 @@ public class BancoPrincipal {
 	                        System.out.println("Digite o valor do débito : ");
 	                        conta2.debito(leia.nextDouble());
 	                    }
-	                    if (op =='2') {
+	                    else if (op =='2') {
 	                        System.out.println("Digite o valor do crédito : ");
 	                        conta2.credito(leia.nextDouble());
 	                    }
-	                    if (op =='3') {
+	                    else if (op =='3') {
 	                        System.out.println("Valor de saldo é : "+ conta2.getSaldo());
 	                    }
-	                    if (op == '4') {
+	                    else if (op == '4') {
 
 	                        conta2.pedirCheque(2);
 	                    }
-	                    if (op == '5') {
-	                        if (conta2.chequesDisponiveis<3) {
-	                            conta2.pedirCheque(1);
-	                        }
-	                    if (op =='6') {
-	                        if (conta2.chequesDisponiveis<3) {
+	                    else if (op == '5') {
+	                        
 	                            conta2.pedirCheque(1);
 	                            break;
-	                        }
-	                        else {
-	                            break ;
-	                        }
+	                    			}
+	                        
 	                    }
-	                    }
-	                 } System.out.println("Você atingiu o limite de movimentações da Conta Corrente.");
-	                   if (conta2.chequesDisponiveis<3) {
-	                       conta2.pedirCheque(1);
+	                 if (i==10) {
+	                 	System.out.println("Você atingiu o limite de movimentações da Conta Corrente.");
+	                 	if (conta2.chequesDisponiveis<3) {
+	                 			conta2.pedirCheque(1);
+	                 		}
 	                   }
 
 	            }	

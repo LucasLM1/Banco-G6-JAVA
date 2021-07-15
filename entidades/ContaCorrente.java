@@ -25,6 +25,7 @@ public class ContaCorrente extends Contag6 {
                System.out.println("Limite de cheques atingidos. ");
            } 
            else {
+        	   System.out.println("Há cheques diponíveis para essa conta! ");
                System.out.println("A cada cheque a conta será debitada em 30,00 reais. ");
                System.out.println("Seu saldo atual é de "+ saldo+" reais.");
                System.out.println("Deseja solicitar cheques? ( S / N) ");
@@ -57,7 +58,7 @@ public class ContaCorrente extends Contag6 {
                }
                else {
                    
-                   System.out.println("x");;
+                   System.out.println("agradecemos por usar o banco G6, volte sempre!");
                }
            }        
        }  
